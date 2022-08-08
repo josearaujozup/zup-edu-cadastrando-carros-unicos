@@ -51,6 +51,11 @@ public class CarroController {
 	@ExceptionHandler
 	public ResponseEntity<?> handleUniqueConstraintErrors(ConstraintViolationException e){
 		
+//		if ("UK_carro_chassi".equals(e.getConstraintName())) {
+//            message = "carro com chassi já existente no sistema";
+//        }
+		
+		
 		Map<String, Object> body = Map.of(
 				"message", "carro já existente no sistema",
 				"timestamp", LocalDateTime.now()
